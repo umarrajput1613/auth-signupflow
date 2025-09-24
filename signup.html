@@ -47,6 +47,14 @@
       </div>
     </div>
   </div>
+  <script>
+  function onClick(e) {
+    e.preventDefault();
+    grecaptcha.enterprise.ready(async () => {
+      const token = await grecaptcha.enterprise.execute('6LelBdMrAAAAANHBqJ18WC2L-x1Km5UkaSdLz6G1', {action: 'LOGIN'});
+    });
+  }
+</script>
 
   <script type="module" src="./app.js"></script>
 </body>
