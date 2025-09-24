@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>Signup</title>
   <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LelBdMrAAAAANHBqJ18WC2L-x1Km5UkaSdLz6G1"></script>
 </head>
 <body class="min-h-screen bg-gradient-to-br from-indigo-600 to-pink-600 flex items-center justify-center p-6">
   <div class="max-w-2xl w-full grid md:grid-cols-2 gap-8">
@@ -46,6 +47,14 @@
       </div>
     </div>
   </div>
+  <script>
+  function onClick(e) {
+    e.preventDefault();
+    grecaptcha.enterprise.ready(async () => {
+      const token = await grecaptcha.enterprise.execute('6LelBdMrAAAAANHBqJ18WC2L-x1Km5UkaSdLz6G1', {action: 'LOGIN'});
+    });
+  }
+</script>
 
   <script type="module" src="./app.js"></script>
 </body>
