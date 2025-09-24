@@ -45,12 +45,12 @@ async function signupFunc(e) {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
-    // ✅ Update displayName in Authentication tab
+   
     await updateProfile(user, {
       displayName: name
     });
 
-    // ✅ Save user record in Firestore
+   
     await addDoc(collection(db, "users"), {
       uid: user.uid,
       name,
